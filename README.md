@@ -26,11 +26,13 @@ Metadata were extracted from Scopus journal-by-journal (as csv files), with the 
 - Number of citations (according to Scopus)
 - Article Digital Object Identifier (DOI)
 
-![Scopus screenshot](Scopus_screenshot.png)
+![Scopus screenshot](Scopus.png)
 
 #### A little hiccup
 
 Note that there was an issue here with encoding of the csv exports from Scopus. This displaced some of the cells when viewed in Excel, so the delimiting was fixed for each file were needed to realign the cells properly. This was done simply be converting them to text, opening back up in Excel, specfying explicitly that commas were the delimiter and using UTF-8 encoding. After this, the files could be re-saved in csv format as needed.
+
+For Acta Palaeontological Polonica, this was not entirely resolved, and two lines of fragmented entries were removed prior to subsequent analysis.
 
 ### Unpaywall
 
