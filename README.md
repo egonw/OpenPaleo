@@ -69,3 +69,6 @@ The intention is to port this project into the Open Science Framework, and then 
 ## Limitations
 
 The journal selection choice explicitly excludes multi-disciplinary Open Access journals such as PeerJ, PLOS ONE, and Scientific Reports, which palaeontologists also frequently publish in.
+
+
+.
