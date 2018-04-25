@@ -26,7 +26,7 @@ Metadata were extracted from Scopus journal-by-journal (as csv files), with the 
 - Number of citations (according to Scopus)
 - Article Digital Object Identifier (DOI)
 
-![Scopus screenshot](Scopus screenshot.png)
+![Scopus screenshot](Scopus_screenshot.png)
 
 #### A little hiccup
 
