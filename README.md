@@ -36,6 +36,10 @@ Note that there was an issue here with encoding of the csv exports from Scopus. 
 
 For Acta Palaeontological Polonica, this was not entirely resolved, and two lines of fragmented entries were removed prior to subsequent analysis.
 
+#### PLOS ONE
+
+Data for PLOS ONE were obtained using the Rplos package in R. The code, resulting data, and Unpaywall query results can all be found [here](https://github.com/Meta-Paleo/OpenPaleo/tree/master/Journal%20data/PLOS%20ONE). Note that some of the data here are different to that obtained to Scopus queries.
+
 ### Unpaywall
 
 The next phase is to use the [Unpaywall DOI checker](https://unpaywall.org/check-dois) on the DOI list for each journal. This provides information such as:
@@ -72,7 +76,4 @@ The intention is to port this project into the Open Science Framework, and then 
 
 ## Limitations
 
-The journal selection choice explicitly excludes multi-disciplinary Open Access journals such as PeerJ, PLOS ONE, and Scientific Reports, which palaeontologists also frequently publish in.
-
-
-.
+The journal selection choice explicitly excludes some multi-disciplinary Open Access journals such as PeerJ and Scientific Reports, which palaeontologists also frequently publish in.
