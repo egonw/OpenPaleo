@@ -12,6 +12,8 @@ The idea of this project is to perform a range of meta-analyses into the publish
 
 We strongly encourage others to participate in the project, propose their own ideas, and to contribute or re-use any of the data or other information available here.
 
+Ultimately, this information might prove useful in developing standards, protocols, and best practices for palaeontological research and publishing.
+
 ## Data sources
 
 ### Google Scholar
