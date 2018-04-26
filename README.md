@@ -57,7 +57,7 @@ The following aspects will be looked at, where applicable.
 - Code availabaility and license
 - Data availabilty and license
 - Whether a new taxon was named
-- Whether new taxa have PIDs (via ZooBank)
+- Whether new taxa have relevant PIDs (e.g., via ZooBank)
 - Whether specimens analysed are archived in a public reposiitory/museum
 - What the copyright status of articles is
 
