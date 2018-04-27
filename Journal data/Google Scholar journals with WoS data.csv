@@ -1,21 +1,21 @@
-Rank,Publication,h5-index,h5-median,Total_cites,JIF,WOS_rank
-1,"Palaeogeography, Palaeoclimatology, Palaeoecology",39,46,20600,2578,5
-2,Journal of Vertebrate Paleontology,25,37,5054,2114,8
-3,Cretaceous Research,24,32,3539,2015,9
-4,Palaeontology,23,35,4005,3132,2
-5,Review of Palaeobotany and Palynology,23,32,4804,1817,13
-6,Journal of Paleontology,23,28,4753,1591,16
-7,Journal of Systematic Palaeontology,22,32,987,2963,3
-8,Paleobiology,22,30,3712,2886,4
-9,Acta Palaeontologica Polonica,20,24,1952,1565,19
-10,Marine Micropaleontology,19,28,3432,1889,12
-11,Palaios,19,25,3216,1983,10
-12,Lethaia,18,24,2179,2281,7
-13,Palaeontologia Electronica,17,23,2209,1400,23
-14,Comptes Rendus Palevol,16,21,1196,1376,25
-15,Facies,16,20,1442,1576,17
-16,Historical Biology,16,20,847,1556,19
-17,Bulletin of Geosciences,16,19,553,1175,32
-18,Geobios,16,18,1964,1431,21
-19,Palaeobiodiversity and Palaeoenvironments,15,20,315,1278,27
-20,Pal?ontologische Zeitschrift,13,19,1026,1095,37
+GS_Rank,Publication,h5-index,h5-median,Total_cites,JIF_2016,WOS_rank
+1,"Palaeogeography, Palaeoclimatology, Palaeoecology",39,46,20600,2.578,5
+2,Journal of Vertebrate Paleontology,25,37,5054,2.114,8
+3,Cretaceous Research,24,32,3539,2.015,9
+4,Palaeontology,23,35,4005,3.132,2
+5,Review of Palaeobotany and Palynology,23,32,4804,1.817,13
+6,Journal of Paleontology,23,28,4753,1.591,16
+7,Journal of Systematic Palaeontology,22,32,987,2.963,3
+8,Paleobiology,22,30,3712,2.886,4
+9,Acta Palaeontologica Polonica,20,24,1952,1.565,19
+10,Marine Micropaleontology,19,28,3432,1.889,12
+11,Palaios,19,25,3216,1.983,10
+12,Lethaia,18,24,2179,2.281,7
+13,Palaeontologia Electronica,17,23,2209,1.400,23
+14,Comptes Rendus Palevol,16,21,1196,1.376,25
+15,Facies,16,20,1442,1.576,17
+16,Historical Biology,16,20,847,1.556,19
+17,Bulletin of Geosciences,16,19,553,1.175,32
+18,Geobios,16,18,1964,1.431,21
+19,Palaeobiodiversity and Palaeoenvironments,15,20,315,1.278,27
+20,Pal?ontologische Zeitschrift,13,19,1026,1.095,37
