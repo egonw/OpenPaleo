@@ -1,6 +1,14 @@
 # Pull in relevant data from Journal data source files
 # Replace with local directory where needed
 
+Journal_data<-read.csv("C:/Users/PC/Documents/GitHub/OpenPaleo/Journal data/Google Scholar journals with WoS data.csv")
+GS_rank<-Journal_data[,"GS_Rank"]
+h5.index<-Journal_data[,"h5.index"]
+Journal_names<-Journal_data[,"Publication"]
+Journal_cites<-Journal_data[,"Total_cites"]
+JIF_2016<-Journal_data[,"JIF_2016"]
+WOS_rank<-Journal_data[,"WOS_rank"]
+
 # Acta Palaeontologica Polonica
 # Note that some lines are still corrupted here, even after parsing. These were eliminated to avoid data errors (file version 2)
 APP_scopus<-read.csv("C:/Users/PC/Documents/GitHub/OpenPaleo/Journal data/Acta Palaeontologica Polonica/ActaPalaeontologicaPolonica_Scopus2.csv")
