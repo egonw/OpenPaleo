@@ -32,11 +32,13 @@ xfit<-seq(min(APP_cite),max(APP_cite),length=100)
 yfit<-dnorm(xfit,mean=mean(APP_cite),sd=sd(APP_cite)) 
 yfit <- yfit*diff(APP_hist$mids[1:2])*length(APP_cite)
 lines(xfit,yfit,col="blue",lwd=2)
+abline(v=1.565,col="blue",lwd=2,lty=2) # 2016 JIF
 
 # Try a density plot instead
 plot(density(APP_cite),xlab="Citation count",
      main="Acta Palaeontologica Polonica")
 polygon((density(APP_cite)),col = "red")
+abline(v=1.565,col="blue",lwd=2,lty=2) # 2016 JIF
 
 
 # Summarise how many articles are OA and how many are not
