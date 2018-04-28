@@ -79,3 +79,5 @@ The intention is to port this project into the Open Science Framework, and then 
 ## Limitations
 
 The journal selection choice explicitly excludes some multi-disciplinary Open Access journals such as PeerJ and Scientific Reports, which palaeontologists also frequently publish in.
+
+Palaeontologica Electronica does not provide DOIs for published articles. However, it is a fully Open Access journal, and therefore cross-checking the data with Unpaywall would be redundant in this case.
