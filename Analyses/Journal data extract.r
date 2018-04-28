@@ -177,7 +177,7 @@ xfit<-seq(min(CR_cite),max(CR_cite),length=100)
 yfit<-dnorm(xfit,mean=mean(CR_cite),sd=sd(CR_cite)) 
 yfit <- yfit*diff(CR_hist$mids[1:2])*length(CR_cite)
 lines(xfit,yfit,col="blue",lwd=2)
-abline(v=1.376,col="blue",lwd=2,lty=2) # 2016 JIF
+abline(v=2.015,col="blue",lwd=2,lty=2) # 2016 JIF
 dev.off()
 
 # Try a density plot instead
@@ -186,7 +186,7 @@ dev.copy(png,'C:/Users/PC/Documents/GitHub/OpenPaleo/Results/Citation analysis/C
 plot(density(CR_cite),xlab="Citation count",
      main="Cretaceous Research")
 polygon((density(CR_cite)),col = "red")
-abline(v=1.376,col="blue",lwd=2,lty=2) # 2016 JIF
+abline(v=2.015,col="blue",lwd=2,lty=2) # 2016 JIF
 dev.off()
 
 # Summarise how many articles are OA and how many are not
@@ -204,7 +204,7 @@ dev.off()
 Facies_scopus<-read.csv("C:/Users/PC/Documents/GitHub/OpenPaleo/Journal data/Facies/Facies_Scopus.csv")
 Facies_unpaywall<-read.csv("C:/Users/PC/Documents/GitHub/OpenPaleo/Journal data/Facies/Facies_Unpaywall.csv")
 
-# Facieseate a new factor for OA status
+# Create a new factor for OA status
 Facies_OA<-Facies_unpaywall[,"is_oa"]
 
 Facies_DOI<-Facies_scopus[,"DOI"]
@@ -224,7 +224,7 @@ xfit<-seq(min(Facies_cite),max(Facies_cite),length=100)
 yfit<-dnorm(xfit,mean=mean(Facies_cite),sd=sd(Facies_cite)) 
 yfit <- yfit*diff(Facies_hist$mids[1:2])*length(Facies_cite)
 lines(xfit,yfit,col="blue",lwd=2)
-abline(v=1.376,col="blue",lwd=2,lty=2) # 2016 JIF
+abline(v=1.576,col="blue",lwd=2,lty=2) # 2016 JIF
 dev.off()
 
 # Try a density plot instead
@@ -233,7 +233,7 @@ dev.copy(png,'C:/Users/PC/Documents/GitHub/OpenPaleo/Results/Citation analysis/F
 plot(density(Facies_cite),xlab="Citation count",
      main="Facies")
 polygon((density(Facies_cite)),col = "red")
-abline(v=1.376,col="blue",lwd=2,lty=2) # 2016 JIF
+abline(v=1.576,col="blue",lwd=2,lty=2) # 2016 JIF
 dev.off()
 
 # Summarise how many articles are OA and how many are not
@@ -245,3 +245,143 @@ dev.copy(png,'C:/Users/PC/Documents/GitHub/OpenPaleo/Results/Citation analysis/F
 barplot(prop.table(table(Facies_OA)),main="Facies, OA proportion")
 dev.off()
 
+
+########## Geobios
+
+Geobios_scopus<-read.csv("C:/Users/PC/Documents/GitHub/OpenPaleo/Journal data/Geobios/Geobios_Scopus.csv")
+Geobios_unpaywall<-read.csv("C:/Users/PC/Documents/GitHub/OpenPaleo/Journal data/Geobios/Geobios_Unpaywall.csv")
+
+# Create a new factor for OA status
+Geobios_OA<-Geobios_unpaywall[,"is_oa"]
+
+Geobios_DOI<-Geobios_scopus[,"DOI"]
+
+# Pull out citation counts, and replace NAs with zero counts
+Geobios_cite<-Geobios_scopus[,"Cited.by"]
+Geobios_cite[is.na(Geobios_cite)]<-0
+
+# Histogram plot
+dev.copy(png,'C:/Users/PC/Documents/GitHub/OpenPaleo/Results/Citation analysis/Geobios/Geobios_citefreq.png',
+         width=1000,height=600)
+Geobios_hist<-hist(Geobios_cite,col="red",xlab="Citation count",
+                  main="Geobios",breaks=20)
+
+# Add a normal distribution curve
+xfit<-seq(min(Geobios_cite),max(Geobios_cite),length=100) 
+yfit<-dnorm(xfit,mean=mean(Geobios_cite),sd=sd(Geobios_cite)) 
+yfit <- yfit*diff(Geobios_hist$mids[1:2])*length(Geobios_cite)
+lines(xfit,yfit,col="blue",lwd=2)
+abline(v=1.431,col="blue",lwd=2,lty=2) # 2016 JIF
+dev.off()
+
+# Try a density plot instead
+dev.copy(png,'C:/Users/PC/Documents/GitHub/OpenPaleo/Results/Citation analysis/Geobios/Geobios_citedensity.png',
+         width=1000,height=600)
+plot(density(Geobios_cite),xlab="Citation count",
+     main="Geobios")
+polygon((density(Geobios_cite)),col = "red")
+abline(v=1.431,col="blue",lwd=2,lty=2) # 2016 JIF
+dev.off()
+
+# Summarise how many articles are OA and how many are not
+summary(Geobios_OA)
+
+# Plot as a proportional barplot
+dev.copy(png,'C:/Users/PC/Documents/GitHub/OpenPaleo/Results/Citation analysis/Geobios/Geobios_OAprop.png',
+         width=1000,height=600)
+barplot(prop.table(table(Geobios_OA)),main="Geobios, OA proportion")
+dev.off()
+
+
+########## Historical Biology
+
+HB_scopus<-read.csv("C:/Users/PC/Documents/GitHub/OpenPaleo/Journal data/Historical Biology/HistoricalBiology_Scopus.csv")
+HB_unpaywall<-read.csv("C:/Users/PC/Documents/GitHub/OpenPaleo/Journal data/Historical Biology/HistoricalBiology_Unpaywall.csv")
+
+# Create a new factor for OA status
+HB_OA<-HB_unpaywall[,"is_oa"]
+
+HB_DOI<-HB_scopus[,"DOI"]
+
+# Pull out citation counts, and replace NAs with zero counts
+HB_cite<-HB_scopus[,"Cited.by"]
+HB_cite[is.na(HB_cite)]<-0
+
+# Histogram plot
+dev.copy(png,'C:/Users/PC/Documents/GitHub/OpenPaleo/Results/Citation analysis/Historical Biology/HB_citefreq.png',
+         width=1000,height=600)
+HB_hist<-hist(HB_cite,col="red",xlab="Citation count",
+                   main="Historical Biology",breaks=20)
+
+# Add a normal distribution curve
+xfit<-seq(min(HB_cite),max(HB_cite),length=100) 
+yfit<-dnorm(xfit,mean=mean(HB_cite),sd=sd(HB_cite)) 
+yfit <- yfit*diff(HB_hist$mids[1:2])*length(HB_cite)
+lines(xfit,yfit,col="blue",lwd=2)
+abline(v=1.556,col="blue",lwd=2,lty=2) # 2016 JIF
+dev.off()
+
+# Try a density plot instead
+dev.copy(png,'C:/Users/PC/Documents/GitHub/OpenPaleo/Results/Citation analysis/Historical Biology/HB_citedensity.png',
+         width=1000,height=600)
+plot(density(HB_cite),xlab="Citation count",
+     main="Historical Biology")
+polygon((density(HB_cite)),col = "red")
+abline(v=1.556,col="blue",lwd=2,lty=2) # 2016 JIF
+dev.off()
+
+# Summarise how many articles are OA and how many are not
+summary(HB_OA)
+
+# Plot as a proportional barplot
+dev.copy(png,'C:/Users/PC/Documents/GitHub/OpenPaleo/Results/Citation analysis/Historical Biology/HB_OAprop.png',
+         width=1000,height=600)
+barplot(prop.table(table(HB_OA)),main="Historical Biology, OA proportion")
+dev.off()
+
+
+########## Journal of Paleontology
+
+JoP_scopus<-read.csv("C:/Users/PC/Documents/GitHub/OpenPaleo/Journal data/Journal of Paleontology/JournalofPaleontology_Scopus.csv")
+JoP_unpaywall<-read.csv("C:/Users/PC/Documents/GitHub/OpenPaleo/Journal data/Journal of Paleontology/JournalofPaleontology_Unpaywall.csv")
+
+# Create a new factor for OA status
+JoP_OA<-JoP_unpaywall[,"is_oa"]
+
+JoP_DOI<-JoP_scopus[,"DOI"]
+
+# Pull out citation counts, and replace NAs with zero counts
+JoP_cite<-JoP_scopus[,"Cited.by"]
+JoP_cite[is.na(JoP_cite)]<-0
+
+# Histogram plot
+dev.copy(png,'C:/Users/PC/Documents/GitHub/OpenPaleo/Results/Citation analysis/Journal of Paleontology/JoP_citefreq.png',
+         width=1000,height=600)
+JoP_hist<-hist(JoP_cite,col="red",xlab="Citation count",
+              main="Journal of Paleontology",breaks=20)
+
+# Add a normal distribution curve
+xfit<-seq(min(JoP_cite),max(JoP_cite),length=100) 
+yfit<-dnorm(xfit,mean=mean(JoP_cite),sd=sd(JoP_cite)) 
+yfit <- yfit*diff(JoP_hist$mids[1:2])*length(JoP_cite)
+lines(xfit,yfit,col="blue",lwd=2)
+abline(v=1.591,col="blue",lwd=2,lty=2) # 2016 JIF
+dev.off()
+
+# Try a density plot instead
+dev.copy(png,'C:/Users/PC/Documents/GitHub/OpenPaleo/Results/Citation analysis/Journal of Paleontology/JoP_citedensity.png',
+         width=1000,height=600)
+plot(density(JoP_cite),xlab="Citation count",
+     main="Journal of Paleontology")
+polygon((density(JoP_cite)),col = "red")
+abline(v=1.591,col="blue",lwd=2,lty=2) # 2016 JIF
+dev.off()
+
+# Summarise how many articles are OA and how many are not
+summary(JoP_OA)
+
+# Plot as a proportional barplot
+dev.copy(png,'C:/Users/PC/Documents/GitHub/OpenPaleo/Results/Citation analysis/Journal of Paleontology/JoP_OAprop.png',
+         width=1000,height=600)
+barplot(prop.table(table(JoP_OA)),main="Journal of Paleontology, OA proportion")
+dev.off()
