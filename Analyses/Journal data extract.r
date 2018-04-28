@@ -40,9 +40,44 @@ plot(density(APP_cite),xlab="Citation count",
 polygon((density(APP_cite)),col = "red")
 abline(v=1.565,col="blue",lwd=2,lty=2) # 2016 JIF
 
-
 # Summarise how many articles are OA and how many are not
 summary(APP_OA)
 
 # Plot as a proportional barplot
 barplot(prop.table(table(APP_OA)),main="Acta Palaeontologica Polonica, OA proportion")
+
+# Bulletin of Geosciences
+BoG_scopus<-read.csv("C:/Users/PC/Documents/GitHub/OpenPaleo/Journal data/Bulletin of Geosciences/BulletinofGeosciences_Scopus.csv")
+BoG_unpaywall<-read.csv("C:/Users/PC/Documents/GitHub/OpenPaleo/Journal data/Bulletin of Geosciences/BulletinofGeosciences_Unpaywall.csv")
+
+# Create a new factor for OA status
+BoG_OA<-BoG_unpaywall[,"is_oa"]
+
+BoG_DOI<-BoG_scopus[,"DOI"]
+
+# Pull out citation counts, and replace NAs with zero counts
+BoG_cite<-BoG_scopus[,"Cited.by"]
+BoG_cite[is.na(BoG_cite)]<-0
+
+# Histogram plot
+BoG_hist<-hist(BoG_cite,col="red",xlab="Citation count",
+               main="Bulletin of Geosciences",breaks=20)
+
+# Add a normal distribution curve
+xfit<-seq(min(BoG_cite),max(BoG_cite),length=100) 
+yfit<-dnorm(xfit,mean=mean(BoG_cite),sd=sd(BoG_cite)) 
+yfit <- yfit*diff(BoG_hist$mids[1:2])*length(BoG_cite)
+lines(xfit,yfit,col="blue",lwd=2)
+abline(v=1.175,col="blue",lwd=2,lty=2) # 2016 JIF
+
+# Try a density plot instead
+plot(density(BoG_cite),xlab="Citation count",
+     main="Bulletin of Geosciences")
+polygon((density(BoG_cite)),col = "red")
+abline(v=1.175,col="blue",lwd=2,lty=2) # 2016 JIF
+
+# Summarise how many articles are OA and how many are not
+summary(BoG_OA)
+
+# Plot as a proportional barplot
+barplot(prop.table(table(BoG_OA)),main="Bulletin of Geosciences, OA proportion")
