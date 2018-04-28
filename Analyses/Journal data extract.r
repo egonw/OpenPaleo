@@ -197,3 +197,51 @@ dev.copy(png,'C:/Users/PC/Documents/GitHub/OpenPaleo/Results/Citation analysis/C
          width=1000,height=600)
 barplot(prop.table(table(CR_OA)),main="Cretaceous Research, OA proportion")
 dev.off()
+
+
+########## Facies
+
+Facies_scopus<-read.csv("C:/Users/PC/Documents/GitHub/OpenPaleo/Journal data/Facies/Facies_Scopus.csv")
+Facies_unpaywall<-read.csv("C:/Users/PC/Documents/GitHub/OpenPaleo/Journal data/Facies/Facies_Unpaywall.csv")
+
+# Facieseate a new factor for OA status
+Facies_OA<-Facies_unpaywall[,"is_oa"]
+
+Facies_DOI<-Facies_scopus[,"DOI"]
+
+# Pull out citation counts, and replace NAs with zero counts
+Facies_cite<-Facies_scopus[,"Cited.by"]
+Facies_cite[is.na(Facies_cite)]<-0
+
+# Histogram plot
+dev.copy(png,'C:/Users/PC/Documents/GitHub/OpenPaleo/Results/Citation analysis/Facies/Facies_citefreq.png',
+         width=1000,height=600)
+Facies_hist<-hist(Facies_cite,col="red",xlab="Citation count",
+              main="Facies",breaks=20)
+
+# Add a normal distribution curve
+xfit<-seq(min(Facies_cite),max(Facies_cite),length=100) 
+yfit<-dnorm(xfit,mean=mean(Facies_cite),sd=sd(Facies_cite)) 
+yfit <- yfit*diff(Facies_hist$mids[1:2])*length(Facies_cite)
+lines(xfit,yfit,col="blue",lwd=2)
+abline(v=1.376,col="blue",lwd=2,lty=2) # 2016 JIF
+dev.off()
+
+# Try a density plot instead
+dev.copy(png,'C:/Users/PC/Documents/GitHub/OpenPaleo/Results/Citation analysis/Facies/Facies_citedensity.png',
+         width=1000,height=600)
+plot(density(Facies_cite),xlab="Citation count",
+     main="Facies")
+polygon((density(Facies_cite)),col = "red")
+abline(v=1.376,col="blue",lwd=2,lty=2) # 2016 JIF
+dev.off()
+
+# Summarise how many articles are OA and how many are not
+summary(Facies_OA)
+
+# Plot as a proportional barplot
+dev.copy(png,'C:/Users/PC/Documents/GitHub/OpenPaleo/Results/Citation analysis/Facies/Facies_OAprop.png',
+         width=1000,height=600)
+barplot(prop.table(table(Facies_OA)),main="Facies, OA proportion")
+dev.off()
+
