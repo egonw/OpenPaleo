@@ -170,7 +170,7 @@ CR_cite[is.na(CR_cite)]<-0
 dev.copy(png,'C:/Users/PC/Documents/GitHub/OpenPaleo/Results/Citation analysis/Cretaceous Research/CR_citefreq.png',
          width=1000,height=600)
 CR_hist<-hist(CR_cite,col="red",xlab="Citation count",
-               main="Cretaceous Research",breaks=20)
+               main="Cretaceous Research",breaks=30)
 
 # Add a normal distribution curve
 xfit<-seq(min(CR_cite),max(CR_cite),length=100) 
