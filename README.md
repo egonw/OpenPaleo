@@ -6,9 +6,9 @@ Resources to investigate the 'openness' of Paleontological research.
 
 The idea of this project is to perform a range of meta-analyses into the published Palaeontology literature. This will include looking at factors such as:
 
-- Quantitative analysis of the 'openness' of Palaeontology research
-- Citation frequences for different journals, compared to their impact factors
-- How aware researchers are that they may have signed away copyright
+- Quantitative analysis of the 'openness' of Palaeontology research.
+- Citation frequences for different journals, compared to their impact factors.
+- How aware researchers are that they may have signed away copyright.
 
 We strongly encourage others to participate in the project, propose their own ideas, and to contribute or re-use any of the data or other information available here.
 
@@ -24,9 +24,9 @@ Journal selection was for the top-20 cited Paleontology journals according to [G
 
 Metadata were extracted from Scopus journal-by-journal (as csv files), with the only filter being on the dates, constrained to published articles between 2015-2016. This includes information such as:
 
-- Authors, titles, and year of publication
-- Number of citations (according to Scopus)
-- Article Digital Object Identifier (DOI)
+- Authors, titles, and year of publication.
+- Number of citations (according to Scopus).
+- Article Digital Object Identifier (DOI).
 
 ![Scopus screenshot](Scopus.png)
 
@@ -53,6 +53,8 @@ All of the results of these steps are available within this [repository](https:/
 ### Author survey
 
 These data will be supplemented by conducting an author survey, built in Google Forms. Suggestions for this survey will be supplemented using an open system through GitHub here.
+
+Corresponding author addresses were obtained from Scopus correspondence address metadata. Here, they were extracted simply by setting : as the delimiter to separate the emails from the rest of the address, and added as a new column. Much of the email data were incomplete, and therefore required manual checks of the relevant literature to acquire.
 
 The following aspects will be looked at, where applicable.
 
