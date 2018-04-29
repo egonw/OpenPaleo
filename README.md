@@ -30,6 +30,12 @@ Metadata were extracted from Scopus journal-by-journal (as csv files), with the 
 
 ![Scopus screenshot](Scopus.png)
 
+### Wikidata / WikiCite
+
+[WikiCite](https://meta.wikimedia.org/wiki/WikiCite) provides a lot of integrated data around scholarly literature,
+linking research papers with authors, topics, species, and much, much more. All data is CCZero and integrates many
+online resources. [Scholia](https://arxiv.org/abs/1703.04222) gives an idea what it can [do for paleontology](https://tools.wmflabs.org/scholia/topic/Q7205).
+
 #### A little hiccup
 
 Note that there was an issue here with encoding of the csv exports from Scopus. This displaced some of the cells when viewed in Excel, so the delimiting was fixed for each file were needed to realign the cells properly. This was done simply be converting them to text, opening back up in Excel, specfying explicitly that commas were the delimiter and using UTF-8 encoding. After this, the files could be re-saved in csv format as needed.
